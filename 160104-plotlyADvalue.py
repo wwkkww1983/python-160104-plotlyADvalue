@@ -4,6 +4,13 @@ import datetime
 from utilUdpRecv import recvCommand 
 import socket
 
+'''
+v0.1 2016 Jan 04
+  - add udp communication to get AD value
+  - add plotly_plot()
+  - add main routine 
+'''
+
 def plotly_plot(xlist, ylist, addnum, grpTtl, filnam):
 	if len(xlist) < addnum:
 		return False
