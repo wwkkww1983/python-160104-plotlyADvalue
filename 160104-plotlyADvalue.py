@@ -5,6 +5,8 @@ from utilUdpRecv import recvCommand
 import socket
 
 '''
+v0.2 2016 Jan 04
+  - fix bug > deleted from 1 not from 0
 v0.1 2016 Jan 04
   - add udp communication to get AD value
   - add plotly_plot()
@@ -50,12 +52,12 @@ while True:
 	ylist.append(yval)
 	time.sleep(3)
 	
-	res = plotly_plot(xlist, ylist, 5, graphTitle, filename)
+	res = plotly_plot(xlist, ylist, 50, graphTitle, filename)
 	if res == False:
 		continue
 
 	print "added at " + str(xlist[1:])
 
-	del xlist[1:]
-	del ylist[1:]
+	del xlist[0:]
+	del ylist[0:]
 
